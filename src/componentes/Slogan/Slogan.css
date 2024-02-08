@@ -1,0 +1,35 @@
+.slogan {
+  display: flex;
+  justify-content: end;
+  margin: 0px 50px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 210px;
+}
+
+.slogan-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slogan-container-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.slogan-text {
+  color: #f9f9f9;
+  font-size: 2.5rem;
+  font-family: "Teko", sans-serif;
+  font-weight: 700;
+}
+
+/*Imagem de <a href="https://br.freepik.com/fotos-gratis/composicao-plana-leiga-de-objetos-de-cinema_4194074.htm#page=7&query=rolo%20de%20filme%20cinema&position=48&from_view=keyword&track=ais&uuid=58aa7c34-fcf6-4243-98f3-4711fbfd84b6">Freepik</a>*/

@@ -1,0 +1,31 @@
+.header {
+  height: auto;
+  width: 98%;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  height: 120px;
+}
+
+.navegacao {
+  display: flex;
+  gap: 100px;
+}
+
+.navegacao a {
+  margin: 0 15px;
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 1.9rem;
+  font-family: "Teko", sans-serif;
+}
+
+.navegacao a:hover {
+  transform: scale(1.1);
+  border-bottom: 2px solid #f9f9f9;
+}

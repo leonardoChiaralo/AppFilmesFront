@@ -1,0 +1,27 @@
+.section {
+  margin: 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  color: #f9f9f9;
+  font-size: 2rem;
+  font-family: "Teko", sans-serif;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  color: red;
+  font-size: 1.2rem;
+  font-family: "Teko", sans-serif;
+  font-weight: 700;
+  height: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}

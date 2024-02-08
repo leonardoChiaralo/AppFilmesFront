@@ -1,0 +1,44 @@
+.container-apresentation {
+  display: flex;
+}
+
+.apresentation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.apresentation-button {
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #040000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.apresentation-img {
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.apresentation-img:hover {
+  transform: scale(1.1);
+}
+
+.title-filme {
+  height: 25px;
+  margin: 5px 0px 0px 5px;
+  color: #f9f9f9;
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
+}
+
+.information-filme {
+  margin: 0px 0px 0px 5px;
+  color: #918c8f;
+  font-family: "Teko", sans-serif;
+  font-size: 1.2rem;
+}
