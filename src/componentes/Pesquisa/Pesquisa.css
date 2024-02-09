@@ -1,0 +1,42 @@
+.pesquisa {
+  text-align: center;
+}
+
+.pesquisa-input {
+  height: 50px;
+  width: 350px;
+  border: 2px solid #f9f9f9;
+  border-radius: 50px;
+  color: #f9f9f9;
+  background-color: transparent;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  font-size: 2rem;
+  font-family: "Teko", sans-serif;
+  text-align: center;
+
+  &::placeholder {
+    color: #918c8f;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #918c8f;
+    border-radius: 0;
+    background-position: 100% center;
+  }
+}
+
+.pesquisa-container {
+  text-align: start;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

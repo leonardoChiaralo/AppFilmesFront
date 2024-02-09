@@ -9,10 +9,10 @@ const Header = () => {
         <a href="/" className="link-spin">
           Home
         </a>
-        <a href="/" className="link-spin">
+        <a href="/filmes" className="link-spin">
           Filmes
         </a>
-        <a href="/" className="link-spin">
+        <a href="/artistas" className="link-spin">
           Artistas
         </a>
       </nav>

@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Modal.css";
 
-const Modal = ({ isOpen, setOpen, filme }) => {
-  const [elenco, setElenco] = useState();
+const Modal = ({ isOpen, setOpen, item }) => {
+  const [colecao, setColecao] = useState();
 
   useEffect(() => {
-    listaElenco();
-  });
+    listaColecao();
+  }, []);
 
-  const listaElenco = async () => {
+  const listaColecao = async () => {
     try {
       const response = await axios.get(
-        `https://localhost:7244/artistafilme/elenco/${filme.id}`
+        `https://localhost:7244/artistafilme/elenco/${item.id}`
       );
-      setElenco(response.data);
+      setColecao(response.data);
     } catch (e) {
       console.error(e);
     }
@@ -32,41 +32,41 @@ const Modal = ({ isOpen, setOpen, filme }) => {
       <div className="background" onClick={handleClick}>
         <div className="modal">
           <img
-            src={filme.imagem}
-            alt={`Capa do filme ${filme.titulo}`}
+            src={item.imagem}
+            alt={`Capa do filme ${item.titulo}`}
             className="modal-img"
           />
           <div className="modal-container">
-            <p className="modal-title">{filme.titulo}</p>
-            <p className="modal-original"> {filme.original}</p>
-            <p className="modal-sinopse">{filme.sinopse}</p>
+            <p className="modal-title">{item.titulo}</p>
+            <p className="modal-original"> {item.original}</p>
+            <p className="modal-sinopse">{item.sinopse}</p>
             <p className="modal-info">
               <span className="span-title">Diretor: </span>
-              {filme.diretor}
+              {item.diretor}
             </p>
             <p className="modal-info">
               <span className="span-title">Ano de lançamento: </span>
-              {filme.ano}
+              {item.ano}
             </p>
             <p className="modal-info">
               <span className="span-title">Gênero: </span>
-              {filme.genero}
+              {item.genero}
             </p>
             <p className="modal-info">
               <span className="span-title">Duração: </span>
-              {filme.duracao} min
+              {item.duracao} min
             </p>
             <p className="modal-info">
               <span className="span-title">IMDB: </span>
-              {filme.nota}
+              {item.nota}
             </p>
             <div className="modal-elenco">
               <p className="modal-elenco-title">
                 <span className="span-title">Elenco:</span>
               </p>
               <ul className="modal-elenco-container">
-                {elenco.map((artista) => (
-                  <li className="modal-elenco-text">{artista.artista}</li>
+                {colecao.map((itemColecao) => (
+                  <li className="modal-elenco-text">{itemColecao.artista}</li>
                 ))}
               </ul>
             </div>

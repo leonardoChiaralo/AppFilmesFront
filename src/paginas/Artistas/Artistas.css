@@ -1,0 +1,10 @@
+.Artistas {
+  margin-bottom: 20px;
+}
+
+.artistas-container {
+  padding: 0px 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

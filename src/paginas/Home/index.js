@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import Header from "./componentes/Header";
+import "./Home.css";
+import Header from "../../componentes/Header";
 import axios from "axios";
-import Section from "./componentes/Section";
-import Modal from "./componentes/Modal";
-import Slogan from "./componentes/Slogan";
+import Section from "../../componentes/Section";
+import Modal from "../../componentes/Modal";
+import Slogan from "../../componentes/Slogan";
 
-function App() {
+function Home() {
   const [filmes, setFilmes] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="Home">
       <Header />
       <Slogan />
       <Section filmes={filmes} />
@@ -35,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
