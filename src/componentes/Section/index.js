@@ -1,14 +1,14 @@
 import Apresentacao from "../Apresentacao";
 import "./Section.css";
 
-const Section = ({ filmes }) => {
+const Section = ({ itens }) => {
   return (
     <section className="section">
       <p className="subtitle">Filmes</p>
       <p className="title">Populares</p>
       <div className="container">
-        {filmes.map((filme) => (
-          <Apresentacao filme={filme} />
+        {itens.map((item) => (
+          <Apresentacao key={item.id} item={item} />
         ))}
       </div>
     </section>

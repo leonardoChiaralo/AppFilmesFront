@@ -7,19 +7,19 @@ import Modal from "../../componentes/Modal";
 import Slogan from "../../componentes/Slogan";
 
 function Home() {
-  const [filmes, setFilmes] = useState([]);
+  const [itens, setItens] = useState([]);
 
   useEffect(() => {
-    listaFilmes();
+    listaItens();
   }, []);
 
-  const listaFilmes = async () => {
+  const listaItens = async () => {
     try {
       const response = await axios.get(
         "https://localhost:7244/filme/destaques"
       );
       console.log(response);
-      setFilmes(response.data);
+      setItens(response.data);
     } catch (e) {
       console.error(e);
     }
@@ -29,7 +29,7 @@ function Home() {
     <div className="Home">
       <Header />
       <Slogan />
-      <Section filmes={filmes} />
+      <Section itens={itens} />
       <Modal />
     </div>
   );

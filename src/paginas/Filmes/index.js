@@ -35,7 +35,7 @@ const Filmes = () => {
       <Pesquisa itens={itens} placeholder={placeholder} />
       <div className="filmes-container">
         {currentPosts.map((item) => (
-          <Apresentacao item={item} />
+          <Apresentacao key={item.id} item={item} />
         ))}
       </div>
       <Paginacao

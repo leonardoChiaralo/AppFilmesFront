@@ -87,3 +87,8 @@
   line-height: 30px;
   margin: 0;
 }
+
+.modal-elenco-a {
+  text-decoration: none;
+  color: #040000;
+}

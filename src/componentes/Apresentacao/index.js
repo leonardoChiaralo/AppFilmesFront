@@ -11,7 +11,7 @@ const Apresentacao = ({ item }) => {
   return (
     <div className="container-apresentation">
       <div className="apresentation">
-        <button className="apresentation-button" onClick={() => setOpen(!open)}>
+        <button className="apresentation-button" onClick={() => setOpen(true)}>
           <img
             src={item.imagem || item.foto}
             alt="Capa do filme A Origem"
@@ -19,11 +19,10 @@ const Apresentacao = ({ item }) => {
           />
         </button>
         {item.imagem ? (
-          <Modal isOpen={open} setOpen={setOpen} item={item} />
+          <Modal key={item.id} isOpen={open} setOpen={setOpen} item={item} />
         ) : (
-          <Retrato isOpen={open} setOpen={setOpen} item={item} />
+          <Retrato key={item.id} isOpen={open} setOpen={setOpen} item={item} />
         )}
-
         <p className="title-filme">{item.titulo || item.nome}</p>
         <p className="information-filme">
           {item.duracao || item.idade} {medida} -{" "}

@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import axios from "axios";
 import "./Retrato.css";
 
 const Retrato = ({ isOpen, setOpen, item }) => {
   const [colecao, setColecao] = useState([]);
+
+  const data = new Date(`${item.dataNascimento}`);
+  const dataFormatada = format(data, "dd 'de' MMMM 'de' yyyy", {
+    locale: ptBR,
+  });
 
   useEffect(() => {
     listaColecao();
@@ -39,7 +46,7 @@ const Retrato = ({ isOpen, setOpen, item }) => {
           <div className="retrato-info-container">
             <p className="retrato-nome">{item.nome}</p>
             <p className="retrato-info">
-              {item.dataNascimento} - {item.idade} anos
+              {dataFormatada} - {item.idade} anos
             </p>
             <p className="retrato-sobre">{item.sobre}</p>
             <div className="retrato-filmografia">
@@ -48,7 +55,7 @@ const Retrato = ({ isOpen, setOpen, item }) => {
               </p>
               <ul className="retrato-filmografia-list">
                 {colecao.map((itemColecao) => (
-                  <li className="retrato-filmografia-text">
+                  <li key={itemColecao.id} className="retrato-filmografia-text">
                     {itemColecao.filme}
                   </li>
                 ))}

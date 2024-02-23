@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuid } from "uuid";
 import axios from "axios";
 import "./Modal.css";
 
@@ -10,13 +11,15 @@ const Modal = ({ isOpen, setOpen, item }) => {
   }, []);
 
   const listaColecao = async () => {
-    try {
-      const response = await axios.get(
-        `https://localhost:7244/artistafilme/elenco/${item.id}`
-      );
-      setColecao(response.data);
-    } catch (e) {
-      console.error(e);
+    if (item && item.id) {
+      try {
+        const response = await axios.get(
+          `https://localhost:7244/artistafilme/elenco/${item.id}`
+        );
+        setColecao(response.data);
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
 
@@ -66,7 +69,9 @@ const Modal = ({ isOpen, setOpen, item }) => {
               </p>
               <ul className="modal-elenco-container">
                 {colecao.map((itemColecao) => (
-                  <li className="modal-elenco-text">{itemColecao.artista}</li>
+                  <li key={uuid()} className="modal-elenco-text">
+                    {itemColecao.artista}
+                  </li>
                 ))}
               </ul>
             </div>
